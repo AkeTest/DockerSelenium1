@@ -35,17 +35,6 @@ public class LoginPage {
 
     public LoginPage(WebDriver driver){
         this.driver=driver;
-        JavascriptExecutor executor = new JavascriptExecutor() {
-            @Override
-            public Object executeScript(String script, Object... args) {
-                return null;
-            }
-
-            @Override
-            public Object executeAsyncScript(String script, Object... args) {
-                return null;
-            }
-        }
         this.wait= new WebDriverWait(driver, Duration.ofSeconds(30));
         PageFactory.initElements(driver, this);
     }

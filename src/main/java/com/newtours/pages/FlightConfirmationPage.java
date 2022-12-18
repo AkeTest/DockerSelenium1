@@ -27,8 +27,10 @@ public class FlightConfirmationPage {
         PageFactory.initElements(driver,this);
     }
 
-    public void printConfirmation(){
+    public String getPrice(){
         this.wait.until(ExpectedConditions.visibilityOf(this.flightCofnrimationHeader));
-        System.out.println(this.prices.get(1).getText());
+        System.out.println("actual price:"+this.prices.get(1).getText());
+        String price=this.prices.get(1).getText();
+        return price;
     }
 }

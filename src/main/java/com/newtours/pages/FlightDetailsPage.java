@@ -46,10 +46,10 @@ public class FlightDetailsPage {
         this.registerButton.click();
     }
 
-    public void selectPassangerNumbers(){
+    public void selectPassangerNumbers(Integer number){
         this.wait.until(ExpectedConditions.visibilityOf(this.passangersNumber));
         Select nPassangers = new Select(driver.findElement(By.name("passCount")));
-        nPassangers.selectByIndex(1);
+        nPassangers.selectByIndex(number);
     }
 
     public void selectFirstClass(){
