@@ -21,7 +21,7 @@ public class SearchPage {
     @FindBy(id="search_button_homepage")
     private WebElement searchButton;
 
-    @FindBy(linkText = "Video")
+    @FindBy(linkText = "Videos")
     private WebElement videoLink;
 
     @FindBy(className = "tile--vid")
@@ -34,7 +34,7 @@ public class SearchPage {
     }
 
     public void goToSearchPage(){
-        this.driver.get("https://duckduckgo.com/");
+        this.driver.get("https://duckduckgo.com/?");
     }
 
     public void doSearch(String keywords){
