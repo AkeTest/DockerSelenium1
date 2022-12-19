@@ -7,4 +7,11 @@
             <class name="com.newtours.pages.BookFlightTest" />
         </classes>
     </test>
+    <test name="Book-Flight-1">
+        <parameter name="noOfPassangers" value="0"/>
+        <parameter name="expectedPrice" value="$584 USD"/>
+        <classes>
+            <class name="com.newtours.pages.BookFlightTest" />
+        </classes>
+    </test>
 </suite>
