@@ -1,0 +1,64 @@
+version: "3"
+
+services:
+  
+  hub:
+    
+    image: selenium/hub:4.7
+    
+    ports:
+      
+      - "4442:4442"
+      
+      - "4443:4443"
+      
+      - "4444:4444"
+  
+  chrome:
+    
+    shm_size: 2gb
+    
+    depends_on:
+      
+      - hub
+    
+    image: selenium/node-chrome:4.7
+    
+    environment:
+      
+      - SE_EVENT_BUS_HOST=hub
+      
+      - SE_EVENT_BUS_PUBLISH_PORT=4442
+      
+      - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
+  
+  firefox:
+    
+    shm_size: 2gb
+    
+    depends_on:
+      
+      - hub
+    
+    image: selenium/node-firefox:4.7
+    
+    environment:
+      
+      - SE_EVENT_BUS_HOST=hub
+      
+      - SE_EVENT_BUS_PUBLISH_PORT=4442
+      
+      - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
+  
+  search-module:
+    image: vonsdpcker/selenium-docker
+    depends_on:
+      - chrome
+      - firefox
+    environment:
+      - BROWSER=chrome
+      - HUB_HOST=hub
+      - MODULE=testnj.xml
+    volumes:
+      - ./search-results:/usr/share/udemy/test-output
+    

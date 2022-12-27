@@ -15,4 +15,4 @@ ADD search-module.xml               search-module.xml
 # HUB_HOST
 # MODULE
 
-ENTRYPOINT java -cp DockerSelenium.jar:DockerSelenium-tests.jar:libs/* -DBROWSER=$BROWSER -DHUB_HOST org.testng.TestNG $MODULE
+ENTRYPOINT java -cp DockerSelenium.jar:DockerSelenium-tests.jar:libs/* -DBROWSER=$BROWSER -DHUB_HOST=${HUB_HOST} org.testng.TestNG $MODULE
