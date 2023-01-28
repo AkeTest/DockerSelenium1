@@ -9,13 +9,13 @@ pipeline {
         }
         stage('Build Image') {
             steps {
-                 powershell  "docker build -t='vinsdocker/selenium-docker' ."
+                 powershell  "docker build -t='orlio/vinsdockerselenium-docker' ."
                 }
         }
         stage('Push Image') {
             steps {
                     powershell "docker login --username=${oRLIO} --password=${DOCKERiVEoRLANDO_85}"
-                    powershell "docker push vinsdocker/selenium-docker:latest"
+                    powershell "docker push orlio/vinsdockerselenium-docker:latest"
 
                 }
             }
