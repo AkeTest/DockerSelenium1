@@ -9,15 +9,15 @@ pipeline {
         }
         stage('Build Image') {
             steps {
-                 bat "docker build -t= 'vinsdocker/selenium-docker' ."
+                 powershell  "docker build -t='vinsdocker/selenium-docker' ."
                 }
         }
         stage('Push Image') {
             steps {
                 withCredentials([usernamePassword(credentialsId:'dockerhub',passwordVariable:'DOCKERiVEoRLANDO_85', usernameVariable: 'oRLIO' )])
 
-                    bat "docker login --username=${oRLIO} --password=${DOCKERiVEoRLANDO_85}"
-                    bat "docker push vonsdpcker/selenium-docker:latest"
+                    powershell "docker login --username=${oRLIO} --password=${DOCKERiVEoRLANDO_85}"
+                    powershell "docker push vonsdpcker/selenium-docker:latest"
 
                 }
             }
