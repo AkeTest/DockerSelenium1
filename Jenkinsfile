@@ -14,8 +14,6 @@ pipeline {
         }
         stage('Push Image') {
             steps {
-                withCredentials([usernamePassword(credentialsId:'dockerhub',passwordVariable:'DOCKERiVEoRLANDO_85', usernameVariable: 'oRLIO' )])
-
                     powershell "docker login --username=${oRLIO} --password=${DOCKERiVEoRLANDO_85}"
                     powershell "docker push vinsdocker/selenium-docker:latest"
 
