@@ -17,7 +17,7 @@ pipeline {
                 withCredentials([usernamePassword(credentialsId:'dockerhub',passwordVariable:'DOCKERiVEoRLANDO_85', usernameVariable: 'oRLIO' )])
 
                     powershell "docker login --username=${oRLIO} --password=${DOCKERiVEoRLANDO_85}"
-                    powershell "docker push vonsdpcker/selenium-docker:latest"
+                    powershell "docker push vinsdocker/selenium-docker:latest"
 
                 }
             }
