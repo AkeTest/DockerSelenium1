@@ -14,7 +14,7 @@ pipeline {
         }
         stage('Push Image') {
             steps {
-                    powershell "docker login --username=${oRLIO} --password=${DOCKERiVEoRLANDO_85}"
+                    powershell "docker login --username=${orlio} --password=${DOCKERiVEoRLANDO_85}"
                     powershell "docker push orlio/vinsdockerselenium-docker:latest"
 
                 }
